@@ -1,0 +1,160 @@
+// Theme
+// -------------------------------
+// Core variables and mixins
+
+@import "variables.less";
+@import "../../../bower_components/bootstrap/less/mixins.less";
+
+// Vendor
+// -------------------------------
+
+// Bootstrap's styles
+@import "bootstrap.less";
+
+
+// Components
+// -------------------------------
+
+/*@import "foo.less";*/
+
+
+
+
+// Site-overrides
+// -------------------------------
+
+// Override Bootstrap in favor of GitHub styles
+pre {
+  background: #F8F8FF;
+}
+
+
+// Move down content because we have a fixed navbar that is 50px tall 
+body {
+	padding-top: 70px;
+	padding-bottom: 20px;
+}
+
+
+
+
+.navbar-main{
+	// .navbar-inverse;
+	.navbar-fixed-top;
+	background-color: @gray-dark;
+	.nav{
+		a:hover,.open a{color: #000;}
+		a{color: #fff;}
+	}
+	.dropdown-menu a{color: @gray-dark;}
+}
+
+.jumbotron .container{
+	text-align: center;
+}
+
+.gray-belt{
+	background-color: @gray-light;
+	border: 10px solid @gray;
+	border-width: 10px 0;
+	padding: 15px 0 30px;
+}
+
+hr{
+	width: 70%;
+	height: 1px;
+	background-color: @gray-dark;
+	margin: 50px auto 15px;
+	&.doubleline{
+		background-color: transparent;
+		height: 5px;
+		border-top: 1px solid @gray-dark;
+		border-bottom: 1px solid @gray-dark;
+	}
+}
+
+.btn-logo {
+	.btn-default;
+  &:hover{
+  	background-color: @color-fg;
+  }
+}
+
+.layout-footer{
+	margin-top: 20px;
+	.links{
+		background-color: @gray-light;
+		overflow: hidden;
+		&:before{
+			content: '';
+			display: block;
+			margin: 5px 0;
+			width: 100%;
+			height: 5px;
+			background-color: transparent;
+			border-bottom: 1px solid @gray-dark;
+		}
+	}
+	.copyright{
+		background-color: #222;
+		padding: 30px 0 15px;
+		text-align: center;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.api-menu{
+	.make-md-column(3);
+	& &-list{
+		> li{
+			> a {
+				display: block;
+				background-color: @gray-light;
+				color: @gray-darker;
+				font-weight: 700;
+			}
+			&.open > a {
+				background-color: @gray-dark;
+				color: #fff;
+				font-weight: 400;
+			}
+			& > a:hover{
+				background-color: @gray-darker;
+				color: #fff;
+				text-decoration: none;
+			}
+		}
+		a{color: @gray-darker;}
+		a:hover,
+		.active a{
+			color: @link-color;
+			text-decoration: underline;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

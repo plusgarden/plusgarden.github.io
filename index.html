@@ -1,91 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="icon" href="../../favicon.ico">
 
-    <title>Garden</title>
+	<title>Garden</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="css/style.css" rel="stylesheet">
-
+	<link href="app/assets/style.css" rel="stylesheet">
+	<script type="text/javascript">
+		var pages = document.querySelectorAll('.site-page')
+	</script>
+	<style type="text/css">
+		.site-page:not(:first){display: none;}
+	</style>
 </head>
 
 <body>
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Project name</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <form class="navbar-form navbar-right">
-                <div class="form-group">
-                    <input type="text" placeholder="Email" class="form-control">
-                </div>
-                <div class="form-group">
-                    <input type="password" placeholder="Password" class="form-control">
-                </div>
-                <button type="submit" class="btn btn-success">Sign in</button>
-            </form>
-        </div><!--/.navbar-collapse -->
-    </div>
+<nav class="navbar navbar-main">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+      		<a class="navbar-brand" href="#">
+      			<img src="app/assets/img/logo-nav.png" style="height:26px;margin-top:-4px">
+      		</a>
+		</div>
+		<div id="navbar" class="navbar-collapse collapse">
+			  <ul class="nav navbar-nav navbar-right">
+				<li><a href="#">
+					<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+					Search
+				</a></li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Developer Guide <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="#">Getting Started</a></li>
+						<li><a href="#">Browser Support</a></li>
+						<li><a href="#">Using Locators</a></li>
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">API Reference <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+					</ul>
+				</li>
+				<li><a href="#">Blog</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+		</div>
+	</div>
 </nav>
 
-<!-- Main jumbotron for a primary marketing message or call to action -->
-<div class="jumbotron">
-    <div class="container">
-        <h1>Hello, world!</h1>
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
-    </div>
+<div id="main-page" class="site-page">
+	<div class="jumbotron">
+		<div class="container">
+			<h1><img src="app/assets/img/logo.png" alt="Garden Plus!"></h1>
+			<p style="font-size: 22.5px;">Web testing is easier than you thought</p>
+			<p>
+				<a class="btn btn-logo btn-lg" href="#" role="button">
+					<img src="app/assets/img/tweet.svg"> Twitter</a>
+				&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+				<a class="btn btn-logo btn-lg" href="#" role="button">
+					<img src="app/assets/img/github.svg"> Github</a>
+		</div>
+	</div>
+
+	<div class="gray-belt">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<h2>Familiar Approach</h2>
+					<p>Built on top of the Jasmine test framewirk, using familiar expect(value).toBe(other) assertions</p>
+				</div>
+				<div class="col-md-4">
+					<h2>Mock by default</h2>
+					<p>Automatically mocks CommonJS modules returned by require()</p>
+				</div>
+				<div class="col-md-4">
+					<h2>Short Feedback</h2>
+					<p>DOM APIs are mocked and tests run in parallel via a small node.js command line utility</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<hr class="doubleline">
+		<div class="row">
+			<div class="col-lg-6 col-lg-offset-3">
+				<h3>Why not just use vanilla Jasmine?</h3>
+
+				<p>Jest provides you with multiple layers on top of Jasmine:
+				<ul>
+					<li>Automatically finds tests to execute in your repo
+					<li><strong>Automatically mocks dependencies for you when running your tests</strong>
+					<li><strong>Allows you to test asynchronous code synchronously</strong>
+					<li>Runs your tests with a fake DOM implementation (via jsdom) so that your tests can run on the command line
+					<li>Runs tests in parallel processes so that they finish sooner
+				</ul>
+			</div>
+		</div>
+		<hr class="doubleline">
+		<div class="row">
+			<div class="col-lg-6 col-lg-offset-3">
+				<h3>Getting Started</h3>
+
+				<p>1. Create a dirrectory
+				<p>2. Run npm install
+				<p>3. Add following to your package.json
+				<p>4. Run npm test
+			</div>
+		</div>
+		<hr class="doubleline">
+	</div>
 </div>
 
-<div class="container">
-    <!-- Example row of columns -->
-    <div class="row">
-        <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-    </div>
+<div id="api-page" class="container site-page">
+	<div class="api-menu" role="complementary">
+		<nav>
+			<ul class="nav api-menu-list">
+				<li>
+					<a href="#">Commands</a>
+					<ul class="nav">
+					</ul>
+				</li>
+				<li class="open">
+					<a href="#">Assertions</a>
+					<ul class="nav">
+						<li><a href="#">attributeEquals</a></li>
+						<li><a href="#">containsText</a></li>
+						<li><a href="#">cssClassPresent</a></li>
+						<li><a href="#">cssClassNotPresent</a></li>
+						<li class="active"><a href="#">cssProperty</a></li>
+						<li><a href="#">elementPresent</a></li>
+						<li><a href="#">elementNotPresent</a></li>
+						<li><a href="#">hidden</a></li>
+						<li><a href="#">title</a></li>
+						<li><a href="#">urlContains</a></li>
+						<li><a href="#">urlEquals</a></li>
+						<li><a href="#">value</a></li>
+						<li><a href="#">valueContains</a></li>
+						<li><a href="#">visible</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">Selenium Protocol</a>
+					<ul class="nav">
+					</ul>
+				</li>
+			</ul>
 
-    <hr>
+			<!-- <a class="back-to-top" href="#top">Back to top</a> -->
+		</nav>
+	</div>
+	<div class="col-md-9" role="main">
+		<h1>Assertions</h1>
+		<h2>Why not just use vanilla Jasmine?</h2>
+		<P>Jest provides you with multiple layers on top of Jasmine:
+			<ul>
+				<li>Automatically finds tests to execute in your repo</li>
+				<li>Automatically mocks dependencies for you when running yor tests</li>
+				<li>Allows you to test asynchronous code sunchronously</li>
+				<li>Runs tests in parallel processes so that they finish sooner</li>
+			</ul>
+		</P>
 
-    <footer>
-        <p>&copy; Company 2014</p>
-    </footer>
-</div> <!-- /container -->
+		<h2>AttributeEquals</h2>
+		<p>Checks if the given attribute of an element has the exprcted value. Parameters:
+		<table class="table table-bordered table-hover">
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Description</th>
+			</tr>
+			<tr>
+				<td>cssSelector</td>
+				<td>string</td>
+				<td>The CSS selector used to locate the element.</td>
+			</tr>
+		</table>
+		</p>
+	</div>
+</div>
 
 
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<footer class="layout-footer">
+	<div class="links">
+		<div class="col-md-offset-2 col-md-2">As featured in:</div>
+		<div class="col-md-2"></div>
+		<div class="col-md-2"></div>
+		<div class="col-md-2"></div>
+	</div>
+	<div class="copyright">Copyright © Plus Garden, 2015. All rights reserved.</p>
+</footer>
+
+
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
